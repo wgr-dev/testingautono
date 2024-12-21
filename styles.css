@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+  min-height: 100vh;
+  background: black;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: transparent;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #00ff00;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.navlinks {
+  display: flex;
+  list-style: none;
+  margin-right: 30px;
+}
+
+.navlinks li {
+  margin: 0 20px;
+}
+
+.navlinks li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navlinks li a:hover {
+  color: #00ff00;
+}
+
+.subscribe {
+  padding: 10px 25px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.subscribe:hover {
+  background-color: #555;
+}
+
+#hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url("images/background.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, black);
+}
+
+h1 {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: 48px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+p {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  margin-top: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.content-section {
+  padding: 100px 50px;
+  min-height: 100vh;
+  background: black;
+  position: relative;
+  color: white;
+}
+
+.content-section h2 {
+  color: #ffffff;
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.content-section h3 {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.tech-features,
+.about-content,
+.careers-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #111111;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.stat-item h4 {
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.job {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #111111;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+.job p {
+  text-shadow: none;
+  font-size: 16px;
+}
+
+.feature p {
+  text-shadow: none;
+  font-size: 16px;
+}
+
+.about-content p {
+  text-shadow: none;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.stat-item p {
+  text-shadow: none;
+  font-size: 16px;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2),
+      0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.2);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4),
+      0 0 30px rgba(255, 255, 255, 0.4), 0 0 40px rgba(0, 255, 0, 0.2);
+  }
+}
+
+.feature {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(51, 51, 51, 0.5);
+  background: linear-gradient(145deg, #111111, #0a0a0a);
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 255, 0, 0.1);
+}
+
+.feature::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ff00, transparent);
+  animation: scanLine 3s linear infinite;
+}
+
+@keyframes scanLine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.stat-item h4 {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.stat-item h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #00ff00;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover h4::after {
+  transform: scaleX(1);
+}
+
+.job {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(51, 51, 51, 0.5);
+  background: linear-gradient(145deg, #111111, #0a0a0a);
+  position: relative;
+}
+
+.job:hover {
+  transform: scale(1.02);
+  border-color: #00ff00;
+}
+
+.job::after {
+  content: "→";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.job:hover::after {
+  opacity: 1;
+  right: 15px;
+}
+
+.content-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.content-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-section h2 {
+  background: linear-gradient(45deg, #fff, #00ff00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.content-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ff00, transparent);
+}
+
+.tech-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  perspective: 1000px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background: rgba(17, 17, 17, 0.5);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+}
+
+.job-openings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
